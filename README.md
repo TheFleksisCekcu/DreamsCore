@@ -10,7 +10,7 @@ If modules category doesn't exist, DreamsCore will create it automatically, addi
 
 Examples: https://github.com/TheFleksisCekcu/DreamsCore/tree/master/Scripts.
 
-##About DreamsCore
+## About DreamsCore
 So, its inspired by CzechHek's Core.lib.
 Also, it contains some custom turtlCore's functions.
 Also, DreamsCore is FULLY compatible with cross-version and LiquidBounce 1.12.2 b73
