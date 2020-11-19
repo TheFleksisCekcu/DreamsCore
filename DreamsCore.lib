@@ -1,9 +1,28 @@
 /*----------------------------------------------*/
 /* DreamsCore - Everything smooth, as intented. */
 /*     (Inspired by CzechHek's Core.lib)        */
+/*                                              */
+/* WARNING: I USED 1.12.2 FORGE API TO DO THIS  */
+/* CORE. SOMETHING WONT WORK ON CROSS-VERSION.  */
+/* WARNING: I USED 1.12.2 FORGE API TO DO THIS  */
+/* CORE. SOMETHING WONT WORK ON CROSS-VERSION.  */
+/* WARNING: I USED 1.12.2 FORGE API TO DO THIS  */
+/* CORE. SOMETHING WONT WORK ON CROSS-VERSION.  */
 /*----------------------------------------------*/
 
-var coreVersion = "3.15", coreAutoUpdate, scriptAutoUpdate, module, command, _AdaptedModule, scriptName, scriptVersion, scriptAuthor;
+/*---------------------*/
+/*      CREDITS        */
+/*    1: CzechHek      */
+/*   2: scorpion3013   */
+/*   3: Beast(turtl)   */
+/*     4: ChocoPie     */
+/*      5: mems        */
+/*    6: Sonya_ADM     */
+/* 7:guys from discord */
+/*     7: and me...    */
+/*---------------------*/
+
+var coreVersion = "3.17", coreAutoUpdate, scriptAutoUpdate, module, command, _AdaptedModule, scriptName, scriptVersion, scriptAuthor;
 (API_V2 = !_AdaptedModule) && (_AdaptedModule = undefined);
 
 function registerModule(m) {
@@ -276,6 +295,44 @@ function getClosestBlockSide(e, n) {
     return r
 }
 
+/*------------------------*/
+/*  Custom functions v3   */
+/*    By scorpion3013     */
+/*------------------------*/
+
+function setTargetRotation(yaw, pitch, ticksStay) {
+    var targetRotation = new Rotation(yaw, pitch)
+    RotationUtils.setTargetRotation(targetRotation, ticksStay)
+}
+
+function getClosestEntity() {
+	var filteredEntites = []
+	for (var i in mc.theWorld.loadedEntityList){
+		var entities = mc.theWorld.loadedEntityList[i]
+
+		if (entities instanceof EntityPlayer && entities != mc.thePlayer){
+			filteredEntites.push(entities)
+		}
+	}
+	filteredEntites.sort(function(a, b){
+		var distanceA = mc.thePlayer.getDistanceToEntity(a)
+		var distanceB = mc.thePlayer.getDistanceToEntity(b)
+
+		return distanceB - distanceA;
+	})
+	return filteredEntites[filteredEntites.length - 1]
+}
+
+/*------------------------*/
+/*  Custom functions v4   */
+/*         By wtf         */
+/*------------------------*/
+
+function setTitle(title) {
+    Display.setTitle(title)
+}
+
+
 /*------------------*/
 /* Object functions */
 /*   By CzechHek    */
@@ -340,6 +397,12 @@ Object.defineProperty(Array.prototype, "last", {
 /*    Java importing   */
 /*  By TheFleksisCekcu */
 /*---------------------*/
+
+/*---------------------------------*/
+/* something from org.lwjgl.opengl */
+/*---------------------------------*/
+
+["GL11","Display"].forEach(function (v) {eval(v.split(".").pop() + "=Java.type(\"org.lwjgl.opengl." + v + "\")")});
 
 /*-----------------------*/
 /* net.minecraft.block.* */
@@ -474,6 +537,12 @@ Object.defineProperty(Array.prototype, "last", {
 
 //net.ccbluex.liquidbounce.utils.timer.*
 ["MSTimer","TickTimer","TimeUtils"].forEach(function (v) {eval(v + "=Java.type(\"net.ccbluex.liquidbounce.utils.timer." + v + "\")")});
+
+/*---------------------------------*/
+/* net.minecraft.client.renderer.* */
+/*---------------------------------*/
+
+["IImageBuffer","ItemMeshDefinition","StitcherException","ActiveRenderInfo","BannerTextures","BlockFluidRenderer","BlockModelRenderer","BlockModelShapes","BlockRendererDispatcher","ChestRenderer","ChunkRenderContainer","DestroyBlockProgress","EntityRenderer","GLAllocation","GlStateManager","ImageBufferDownload","InventoryEffectRenderer","ItemModelMesher","ItemRenderer","Matrix4f","OpenGlHelper","RegionRenderCacheBuilder","RenderGlobal","RenderHelper","RenderItem","RenderList","Tessellator","ThreadDownloadImageData","VboRenderList","Vector3d","ViewFrustum","WorldVertexBufferUploader"].forEach(function (v) {eval(v.split(".").pop() + "=Java.type(\"net.minecraft.client.renderer." + v + "\")")});
 
 /*--------------------------------*/
 /* net.ccbluex.liquidbounce.api.* */
