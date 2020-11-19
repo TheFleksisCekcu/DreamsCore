@@ -29,6 +29,8 @@ DreamsCore automatically imports:
 * net.ccbluex.liquidbounce.api.* (NO MINECRAFT DIR IMPORTING) (cross-version utils and etc...)
 * net.ccbluex.liquidbounce.api.minecraft.util.* (cross-version minecraft utils)
 * net.ccbluex.liquidbounce.value.* (lb values)
+* org.lwjgl.opengl.GL11
+* org.lwjgl.opengl.Display
 
 ## Cross-version compability
 A lot of CzechHek's core.lib scripts are perfectly working, but they need to be ported.
