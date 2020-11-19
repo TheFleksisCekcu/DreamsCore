@@ -15,17 +15,13 @@ So, its inspired by CzechHek's Core.lib.
 Also, it contains some custom turtlCore's functions.
 Also, DreamsCore is FULLY compatible with cross-version and LiquidBounce 1.12.2 b73
 
-## Credits
-Big special thanks to CzechHek for his core.lib.
-Special thanks for yorik100, because he gave turtlCore to me.
-Special thanks to turtl for his custom functions.
-
 ## Importing
 DreamsCore automatically imports:
 * net.minecraft.block.* (blocks)
 * net.minecraft.client.gui.* (guis)
 * net.minecraft.entity.* (entities)
 * net.minecraft.init.* (blocks, items)
+* net.minecraft.client.renderer.* (no sub-directories)
 * net.minecraft.item.* (items)
 * net.minecraft.network.* (packets+)
 * net.minecraft.util.* (mc utils)

@@ -19,7 +19,8 @@
 /*      5: mems        */
 /*    6: Sonya_ADM     */
 /* 7:guys from discord */
-/*     7: and me...    */
+/*     8: yorik100     */
+/*     9: and me...    */
 /*---------------------*/
 
 var coreVersion = "3.17", coreAutoUpdate, scriptAutoUpdate, module, command, _AdaptedModule, scriptName, scriptVersion, scriptAuthor;
